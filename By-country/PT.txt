@@ -1,1 +1,2 @@
-vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@195.133.92.20:443?type=ws&security=tls&path=/&sni=snip.edgeoneai.cc.cd&fp=chrome#Rose%20%7C%20%F0%9F%87%B5%F0%9F%87%B9%20PT%20%7C%20VLESS%20%7C%201402
+vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@195.133.92.20:443?type=ws&security=tls&path=/&sni=snip.edgeoneai.cc.cd&fp=chrome#Rose%20%7C%20%F0%9F%87%B5%F0%9F%87%B9%20PT%20%7C%20VLESS%20%7C%201033
+vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@195.133.92.228:443?encryption=none&security=tls&sni=snip.edgeoneai.cc.cd&fp=chrome&type=ws&host=snip.edgeoneai.cc.cd&path=%2Ffdip%3Dsstp%3A%2F%2Fvpn%3Avpn%40public-vpn-200.opengw.net%3A443#Rose%20%7C%20%F0%9F%87%B5%F0%9F%87%B9%20PT%20%7C%20VLESS%20%7C%207682
