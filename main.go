@@ -754,22 +754,35 @@ func standardizeName(config string, protocol string, index int, country string) 
 
 func parseCoreIdentity(config string, protocol string) string {
 	config = strings.TrimSpace(config)
+	if i := strings.LastIndex(config, "#"); i >= 0 {
+		config = config[:i]
+	}
 
 	switch protocol {
-	case "vless":
-    u, err := url.Parse(config)
-    if err != nil || u.User == nil {
-        return config
-    }
-    uuid := u.User.Username()
-    return fmt.Sprintf("vless://%s@%s", uuid, u.Host)
+	case "vmess":
+		raw := strings.TrimPrefix(config, "vmess://")
+		decoded, err := decodeBase64([]byte(raw))
+		if err != nil {
+			return config
+		}
+
+		var data map[string]any
+		if err := json.Unmarshal([]byte(decoded), &data); err != nil {
+			return config
+		}
+
+		delete(data, "ps")
+		canonical, err := json.Marshal(data)
+		if err != nil {
+			return config
+		}
+		return "vmess://" + string(canonical)
+
+	case "vless", "trojan", "ss", "ssr", "hy2", "hysteria2", "hysteria", "tuic":
+		return config
 
 	default:
-		host, port := getHostPort(config, protocol)
-		if host == "" {
-			return config 
-		}
-		return fmt.Sprintf("%s://%s:%s", protocol, host, port)
+		return config
 	}
 }
 
