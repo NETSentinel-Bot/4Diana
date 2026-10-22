@@ -1,6 +1,6 @@
 module github.com/EEvanescence/4Diana
 
-go 1.26.5
+go 1.25
 
 require (
 	github.com/oschwald/geoip2-golang v1.13.0
